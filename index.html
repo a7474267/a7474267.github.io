@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-24 10:52:59 / Modified: 16:08:58" itemprop="dateCreated datePublished" datetime="2020-08-24T10:52:59+08:00">2020-08-24</time>
+              <time title="Created: 2020-08-24 10:52:59 / Modified: 16:12:04" itemprop="dateCreated datePublished" datetime="2020-08-24T10:52:59+08:00">2020-08-24</time>
             </span>
 
           
@@ -197,13 +197,13 @@
       
           <h1 id="How-does-API-work"><a href="#How-does-API-work" class="headerlink" title="How does API work ?"></a>How does API work ?</h1><p>When we operate on webpage, it will need to get some data from backend.<br>But, it can’t get data directly from DB(database), instead,  need to ask browser to do the favor.<br>Therefore, there is a communication method between browser and webpage called <strong>API</strong>.<br>(Application Programming Interface)</p>
 <p>And API can be used to do <strong>GET</strong> / <strong>POST</strong> / <strong>PATCH</strong> / <strong>DELETE</strong>.</p>
-<h1 id="Timing-to-use-each-API-method"><a href="#Timing-to-use-each-API-method" class="headerlink" title="Timing to use each API method"></a>Timing to use each API method</h1><ul>
+<h1 id="Timing-to-use-each-of-API-method"><a href="#Timing-to-use-each-of-API-method" class="headerlink" title="Timing to use each of API method"></a>Timing to use each of API method</h1><ul>
 <li>GET : When we want some data from DB</li>
 <li>POST : User builds data on webpage site, validated by browser, then send to DB to store.</li>
 <li>PATCH : Similar process to POST, aims to update data in DB.</li>
 <li>DELETE : Remove one specified data in DB.</li>
 </ul>
-<h1 id="Difference-among-client-side-amp-server-side"><a href="#Difference-among-client-side-amp-server-side" class="headerlink" title="Difference among client side &amp; server side"></a>Difference among client side &amp; server side</h1><p>Client side: Client can use their unique UUID to access data, <strong>validation is not required</strong>.<br>Server side: Administrator have to pass validation, using <strong>TOKEN</strong>.</p>
+<h1 id="Difference-between-client-side-amp-server-side"><a href="#Difference-between-client-side-amp-server-side" class="headerlink" title="Difference between client side &amp; server side"></a>Difference between client side &amp; server side</h1><p>Client side: Client can use their unique UUID to access data, <strong>validation is not required</strong>.<br>Server side: Administrator have to pass validation, using <strong>TOKEN</strong>.</p>
 <p>Therefor, when we send request from client-side to server-side<br>if this request is processed by serve-side API<br>then validation is required, and content is contained inside <strong>headers</strong>.<br><img src="https://drive.google.com/uc?export=view&id=1cy-m_CvQMuwLacuIJoWlxGgNJJR2Fwgz"></p>
 <p>Let’s add validation content: </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.headers[<span class="string">&#x27;Authorization&#x27;</span>] = <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span>;</span><br><span class="line"><span class="comment">// axios 設定說明：https://github.com/axios/axios#config-defaults</span></span><br></pre></td></tr></table></figure>
