@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://drive.google.com/uc?export=view&id=119MuaoqBKQmHv9BEpoG7zi24_quf7d4C">
 <meta property="article:published_time" content="2020-08-26T03:23:28.000Z">
-<meta property="article:modified_time" content="2020-08-26T10:05:16.866Z">
+<meta property="article:modified_time" content="2020-08-26T17:24:10.933Z">
 <meta property="article:author" content="Reynold Cheng">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -186,10 +186,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-08-26 11:23:28 / Modified: 18:05:16" itemprop="dateCreated datePublished" datetime="2020-08-26T11:23:28+08:00">2020-08-26</time>
+              <time title="Created: 2020-08-26 11:23:28" itemprop="dateCreated datePublished" datetime="2020-08-26T11:23:28+08:00">2020-08-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:24:10" itemprop="dateModified" datetime="2020-08-27T01:24:10+08:00">2020-08-27</time>
+              </span>
 
           
 
@@ -291,15 +297,17 @@
 <p>Examine commit history</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://drive.google.com/uc?export=view&id=119MuaoqBKQmHv9BEpoG7zi24_quf7d4C"></p>
-<h1 id="Connect-with-Remote-Repository"><a href="#Connect-with-Remote-Repository" class="headerlink" title="Connect with Remote Repository"></a>Connect with Remote Repository</h1><p>When we are ready to push local repository onto Github<br>Next step, add remote repository on <a target="_blank" rel="noopener" href="https://github.com/">Github</a></p>
+<h1 id="Connect-with-Remote-Repository"><a href="#Connect-with-Remote-Repository" class="headerlink" title="Connect with Remote Repository"></a>Connect with Remote Repository</h1><p>When we are ready to push local repository onto Github<br>Next step is, adding remote repository on <a target="_blank" rel="noopener" href="https://github.com/">Github</a></p>
 <p>Now, we have existed local repository, therefore, we input below in Git Bash</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">…or push an existing repository from the <span class="built_in">command</span> line</span><br><span class="line">git remote add origin https://github.com/a7474267/131.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>Here,<br><font color=#FF6600> <a target="_blank" rel="noopener" href="https://github.com/a7474267/131.git">https://github.com/a7474267/131.git</a> </font>  means <font color=#FF6600>web link of remote repository</font><br><font color=#FF6600>origin</font> means <font color=#FF6600>name of remote repository</font><br><font color=#FF6600>master</font> means <font color=#FF6600>branch name</font><br><font color=#FF6600> -u </font> means <font color=#FF6600>default repository service supplier, ex. Github, Bitbucket, Gitlab</font></p>
 <p>By the way, for future update in local repository, just use below command to push to Github</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>But, if we don’t build local repository in advance, we use below instead</p>
+<p>But, if we don’t build local repository in advance, then we turn to use below instead</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# 131&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git remote add origin https://github.com/a7474267/131.git</span><br><span class="line">git push -u origin master                </span><br></pre></td></tr></table></figure>
-
+<h1 id="One-repository-name-can-only-be-used-for-one-time"><a href="#One-repository-name-can-only-be-used-for-one-time" class="headerlink" title="One repository name can only be used for one time"></a>One repository name can only be used for one time</h1><p>Due to the requirement amid real software development, multiple remote repositories are needed.<br>For example, repository for testing, repository for official release…etc</p>
+<p>For each remote repository, we must use different repository name, even these repositories are stored on different service supplier site.<br>For instance, there is a repository on Github named <strong>origin</strong>, then you <strong>can’t push another origin onto Bitbucket.</strong></p>
 <h1 id="Other-small-tips"><a href="#Other-small-tips" class="headerlink" title="Other small tips"></a>Other small tips</h1><p>If you want to shorten the length of Git command<br>even speed up your coding efficiency<br>then, abbreviation setting might be your good friend.<br>For example, we type <code>git commit</code>, but you can make it easier by applying <code>git ci</code> only</p>
 <hr>
 <p>Here are some simple abbreviations example<br>All can be customized in accordance with your coding habit.</p>
@@ -383,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-need-to-learn-version-control-system-Git"><span class="nav-number">1.</span> <span class="nav-text">Why need to learn version control system (Git) ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Local-Repository-Setting"><span class="nav-number">2.</span> <span class="nav-text">Local Repository Setting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connect-with-Remote-Repository"><span class="nav-number">3.</span> <span class="nav-text">Connect with Remote Repository</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-small-tips"><span class="nav-number">4.</span> <span class="nav-text">Other small tips</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-need-to-learn-version-control-system-Git"><span class="nav-number">1.</span> <span class="nav-text">Why need to learn version control system (Git) ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Local-Repository-Setting"><span class="nav-number">2.</span> <span class="nav-text">Local Repository Setting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connect-with-Remote-Repository"><span class="nav-number">3.</span> <span class="nav-text">Connect with Remote Repository</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#One-repository-name-can-only-be-used-for-one-time"><span class="nav-number">4.</span> <span class="nav-text">One repository name can only be used for one time</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-small-tips"><span class="nav-number">5.</span> <span class="nav-text">Other small tips</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
