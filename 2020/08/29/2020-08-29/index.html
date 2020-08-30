@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Parallax.js Demo Site  Table of Contents  3 ways to install this plug-in  Use CDN1&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;parallax&#x2F;3.1.0&#x2F;parallax.min.js&quot;&gt;&lt;&#x2F;script&gt; Do">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Use JS plug-in to perform Parallax Scrolling Effect&#39;">
+<meta property="og:url" content="http://yoursite.com/2020/08/29/2020-08-29/index.html">
+<meta property="og:site_name" content="Fly with code">
+<meta property="og:description" content="Parallax.js Demo Site  Table of Contents  3 ways to install this plug-in  Use CDN1&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;parallax&#x2F;3.1.0&#x2F;parallax.min.js&quot;&gt;&lt;&#x2F;script&gt; Do">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-29T02:15:02.000Z">
+<meta property="article:modified_time" content="2020-08-30T04:05:50.930Z">
+<meta property="article:author" content="Reynold Cheng">
+<meta property="article:tag" content="AOS">
+<meta property="article:tag" content="ParallaxScrolling">
+<meta property="article:tag" content="JS Plug In">
+<meta property="article:tag" content="Animation">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/29/2020-08-29/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Use JS plug-in to perform Parallax Scrolling Effect' | Fly with code</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fly with code</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Get wet inside ocean of code</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/2020-08-29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://scontent.fkhh1-1.fna.fbcdn.net/v/t1.0-9/s960x960/104592566_10223606686703682_4745580703835983847_o.jpg?_nc_cat=106&_nc_sid=85a577&_nc_ohc=WHCSU0pNjjcAX_fDi9A&_nc_ht=scontent.fkhh1-1.fna&_nc_tp=7&oh=815b74c796a5c30c4f43e90e8a4bab96&oe=5F672494">
+      <meta itemprop="name" content="Reynold Cheng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fly with code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Use JS plug-in to perform Parallax Scrolling Effect'
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-29 10:15:02" itemprop="dateCreated datePublished" datetime="2020-08-29T10:15:02+08:00">2020-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-30 12:05:50" itemprop="dateModified" datetime="2020-08-30T12:05:50+08:00">2020-08-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Parallax-js"><a href="#Parallax-js" class="headerlink" title="Parallax.js"></a>Parallax.js</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="http://matthew.wagerfield.com/parallax/">Demo Site</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wagerfield/parallax">Table of Contents</a></p>
+</li>
+<li><p>3 ways to install this plug-in</p>
+<ul>
+<li>Use CDN<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Download <code>compiled.zip</code> from <a target="_blank" rel="noopener" href="https://github.com/wagerfield/parallax/releases">release section</a> </li>
+<li>Install by npm<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -s parallax-js</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+</ul>
+</li>
+<li><p>If you don’t use CDN, then find <code>parallax.js</code>,then</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;path/to/parallax.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>Set up HTML default elements</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;scene&quot;</span>&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>Set up your JavaScript content</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var scene = document.getElementById(<span class="string">&#x27;scene&#x27;</span>);</span><br><span class="line">var parallaxInstance = new Parallax(scene);</span><br></pre></td></tr></table></figure></li>
+<li><p>Run Parallax effect in codepen</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="Parallax.js" src="https://codepen.io/a7474267/embed/preview/vYGZgJw?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/vYGZgJw'>Parallax.js</a> by a7474267
+(<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+</li>
+<li><p>Other Parallax effect<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196098">https://ithelp.ithome.com.tw/articles/10196098</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/github_36534129/article/details/72673585">https://blog.csdn.net/github_36534129/article/details/72673585</a></p>
+</li>
+</ul>
+<h1 id="Parallax-effect-with-background-image"><a href="#Parallax-effect-with-background-image" class="headerlink" title="Parallax effect with background image"></a>Parallax effect with background image</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.w3schools.com/howto/howto_css_parallax.asp">W3school Demo</a></p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="W3cschool  Parallax.js demo" src="https://codepen.io/a7474267/embed/preview/ZEWyLNR?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/ZEWyLNR'>W3cschool  Parallax.js demo</a> by a7474267
+(<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wcc723.github.io/css/2013/09/25/background-att/">Casper Demo</a></p>
+</li>
+<li><p>Three different Parallax effects with background</p>
+<ul>
+<li>fixed</li>
+<li>scroll</li>
+<li>local<iframe height="265" style="width: 100%;" scrolling="no" title="background demo" src="https://codepen.io/a7474267/embed/preview/zYqzNVM?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/zYqzNVM'>background demo</a> by a7474267
+(<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="LAX-js"><a href="#LAX-js" class="headerlink" title="LAX.js"></a>LAX.js</h1><p><a target="_blank" rel="noopener" href="https://alexfox.dev/lax.js/">Demo 1</a><br><a target="_blank" rel="noopener" href="https://alexfox.dev/lax.js/sprite.html">Demo 2</a><br><a target="_blank" rel="noopener" href="https://github.com/alexfoxy/lax.js">Github</a></p>
+<ul>
+<li><p>2 ways to install</p>
+<ul>
+<li>Install by npi<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install lax.js</span><br><span class="line">import lax from <span class="string">&#x27;lax.js&#x27;</span> </span><br></pre></td></tr></table></figure></li>
+<li>By CDN<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/lax.js&quot;</span> &gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Set up Javascript</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.onload = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    lax.setup() // init</span><br><span class="line"></span><br><span class="line">    const updateLax = () =&gt; &#123;</span><br><span class="line">        lax.update(window.scrollY)</span><br><span class="line">        window.requestAnimationFrame(updateLax)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    window.requestAnimationFrame(updateLax)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Codepen Demo</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="Lax.js" src="https://codepen.io/a7474267/embed/preview/WNwOOGw?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/WNwOOGw'>Lax.js</a> by a7474267
+(<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+</li>
+<li><p>Other effect<br><a target="_blank" rel="noopener" href="https://github.com/alexfoxy/lax.js">https://github.com/alexfoxy/lax.js</a></p>
+</li>
+<li><p>Guidance video<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jaVy3SCibJw">https://www.youtube.com/watch?v=jaVy3SCibJw</a></p>
+</li>
+</ul>
+<h1 id="Animate-css"><a href="#Animate-css" class="headerlink" title="Animate.css"></a>Animate.css</h1><p>It’s a plug-in composed of 100% CSS without Javascript code<br>Before we go straight into animate.css<br>Let’s explore its foundation, Natives CSS animation.<br>Here is <a target="_blank" rel="noopener" href="https://www.oxxostudio.tw/articles/201803/css-animation.html">complete detail</a></p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="css animation" src="https://codepen.io/a7474267/embed/preview/GRZEGxX?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/GRZEGxX'>css animation</a> by a7474267
+  (<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://animate.style/">Document</a></li>
+<li>2 ways to install<ul>
+<li>Install with npm<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install animate.css --save</span><br></pre></td></tr></table></figure></li>
+<li>Use CDN<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css&quot;</span>/&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>How to use it ?<ul>
+<li>add the class <code>animate__animated</code> to an element</li>
+<li>add class of the animation names, as example below<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 class=<span class="string">&quot;animate__animated animate__bounce&quot;</span>&gt;An animated element&lt;/h1&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Demo<iframe height="265" style="width: 100%;" scrolling="no" title="Animate.css" src="https://codepen.io/a7474267/embed/preview/eYZRKXB?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/a7474267/pen/eYZRKXB'>Animate.css</a> by a7474267
+(<a target="_blank" rel="noopener" href='https://codepen.io/a7474267'>@a7474267</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe></li>
+</ul>
+</li>
+<li>Demo for all effects<iframe height="265" style="width: 100%;" scrolling="no" title="Animate CSS by Daniel Eden" src="https://codepen.io/strapro/embed/preview/dIqAH?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/strapro/pen/dIqAH'>Animate CSS by Daniel Eden</a> by Stratos Provatopoulos
+(<a target="_blank" rel="noopener" href='https://codepen.io/strapro'>@strapro</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+</li>
+</ul>
+<h1 id="AOS"><a href="#AOS" class="headerlink" title="AOS"></a>AOS</h1><p><a target="_blank" rel="noopener" href="https://michalsnik.github.io/aos/">Github</a></p>
+<ul>
+<li>Install by npm<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save aos@next</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import AOS from <span class="string">&#x27;aos&#x27;</span>;</span><br><span class="line">import <span class="string">&#x27;aos/dist/aos.css&#x27;</span>; // You can also use &lt;link&gt; <span class="keyword">for</span> styles</span><br><span class="line">// ..</span><br><span class="line">AOS.init();</span><br></pre></td></tr></table></figure></li>
+<li>Use CDN<ul>
+<li>Insert CSS CDN<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://unpkg.com/aos@next/dist/aos.css&quot;</span> /&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Insert JavaScript CDN<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/aos@next/dist/aos.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Initialize AOS<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AOS.init();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Customize AOS<br>If you want to customize AOS, then don’t use <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  AOS.init();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+Please use<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">AOS.init(&#123;</span><br><span class="line">  // Global settings:</span><br><span class="line">  <span class="built_in">disable</span>: <span class="literal">false</span>, // accepts following values: <span class="string">&#x27;phone&#x27;</span>, <span class="string">&#x27;tablet&#x27;</span>, <span class="string">&#x27;mobile&#x27;</span>, boolean, expression or <span class="keyword">function</span></span><br><span class="line">  startEvent: <span class="string">&#x27;DOMContentLoaded&#x27;</span>, // name of the event dispatched on the document, that AOS should initialize on</span><br><span class="line">  initClassName: <span class="string">&#x27;aos-init&#x27;</span>, // class applied after initialization</span><br><span class="line">  animatedClassName: <span class="string">&#x27;aos-animate&#x27;</span>, // class applied on animation</span><br><span class="line">  useClassNames: <span class="literal">false</span>, // <span class="keyword">if</span> <span class="literal">true</span>, will add content of `data-aos` as classes on scroll</span><br><span class="line">  disableMutationObserver: <span class="literal">false</span>, // disables automatic mutations<span class="string">&#x27; detections (advanced)</span></span><br><span class="line"><span class="string">  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)</span></span><br><span class="line"><span class="string">  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:</span></span><br><span class="line"><span class="string">  offset: 120, // offset (in px) from the original trigger point</span></span><br><span class="line"><span class="string">  delay: 0, // values from 0 to 3000, with step 50ms</span></span><br><span class="line"><span class="string">  duration: 400, // values from 0 to 3000, with step 50ms</span></span><br><span class="line"><span class="string">  easing: &#x27;</span>ease<span class="string">&#x27;, // default easing for AOS animations</span></span><br><span class="line"><span class="string">  once: false, // whether animation should happen only once - while scrolling down</span></span><br><span class="line"><span class="string">  mirror: false, // whether elements should animate out while scrolling past them</span></span><br><span class="line"><span class="string">  anchorPlacement: &#x27;</span>top-bottom<span class="string">&#x27;, // defines which position of the element regarding to window should trigger the animation</span></span><br></pre></td></tr></table></figure></li>
+<li>Change behavior of specific element<pre><code class="bash">&lt;div
+  data-aos=&quot;fade-up&quot;
+  data-aos-offset=&quot;200&quot;
+  data-aos-delay=&quot;50&quot;
+  data-aos-duration=&quot;1000&quot;
+  data-aos-easing=&quot;ease-in-out&quot;
+  data-aos-mirror=&quot;true&quot;
+  data-aos-once=&quot;false&quot;
+  data-aos-anchor-placement=&quot;top-center&quot;
+&gt;
+&lt;/div&gt;</code></pre>
+</li>
+<li>AOS Demo<br><a target="_blank" rel="noopener" href="https://a7474267.github.io/W7-HW/">Demo Link</a></li>
+</ul>
+<h1 id="12-choices-for-jQuery-Parallax-Plugins"><a href="#12-choices-for-jQuery-Parallax-Plugins" class="headerlink" title="12 choices for jQuery Parallax Plugins"></a>12 choices for jQuery Parallax Plugins</h1><p><a target="_blank" rel="noopener" href="https://jqueryhouse.com/12-jquery-parallax-plugins/">https://jqueryhouse.com/12-jquery-parallax-plugins/</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AOS/" rel="tag"># AOS</a>
+              <a href="/tags/ParallaxScrolling/" rel="tag"># ParallaxScrolling</a>
+              <a href="/tags/JS-Plug-In/" rel="tag"># JS Plug In</a>
+              <a href="/tags/Animation/" rel="tag"># Animation</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/27/2020-08-27/" rel="prev" title="Boost your coding speed with hotkeys on VScode">
+      <i class="fa fa-chevron-left"></i> Boost your coding speed with hotkeys on VScode
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Parallax-js"><span class="nav-number">1.</span> <span class="nav-text">Parallax.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parallax-effect-with-background-image"><span class="nav-number">2.</span> <span class="nav-text">Parallax effect with background image</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LAX-js"><span class="nav-number">3.</span> <span class="nav-text">LAX.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Animate-css"><span class="nav-number">4.</span> <span class="nav-text">Animate.css</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOS"><span class="nav-number">5.</span> <span class="nav-text">AOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-choices-for-jQuery-Parallax-Plugins"><span class="nav-number">6.</span> <span class="nav-text">12 choices for jQuery Parallax Plugins</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Reynold Cheng"
+      src="https://scontent.fkhh1-1.fna.fbcdn.net/v/t1.0-9/s960x960/104592566_10223606686703682_4745580703835983847_o.jpg?_nc_cat=106&_nc_sid=85a577&_nc_ohc=WHCSU0pNjjcAX_fDi9A&_nc_ht=scontent.fkhh1-1.fna&_nc_tp=7&oh=815b74c796a5c30c4f43e90e8a4bab96&oe=5F672494">
+  <p class="site-author-name" itemprop="name">Reynold Cheng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/a7474267" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;a7474267" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:a7474267@gmail.com" title="E-Mail → mailto:a7474267@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/joseph.jeng" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;joseph.jeng" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:a7474267?call|chat" title="Skype → skype:a7474267?call|chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Reynold Cheng</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
