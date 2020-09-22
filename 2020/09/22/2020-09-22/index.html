@@ -20,23 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Photo credit to 手寫筆記">
-<meta property="og:type" content="article">
-<meta property="og:title" content="What is Virtual DOM?">
-<meta property="og:url" content="http://yoursite.com/2020/09/20/2020-09-20/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Truthy &amp; Falsy vs Logical operators">
+<meta property="og:url" content="http://yoursite.com/2020/09/22/2020-09-22/index.html">
 <meta property="og:site_name" content="Fly with code">
-<meta property="og:description" content="Photo credit to 手寫筆記">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1NAZ7I26YFtBtQBRuZdjgS7ZHODB_WBJU">
-<meta property="article:published_time" content="2020-09-20T12:37:37.000Z">
-<meta property="article:modified_time" content="2020-09-20T13:10:58.196Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1OMMgz7zwxu8fsXOJC6zc8b8SXZ_wK8qK">
+<meta property="article:published_time" content="2020-09-22T01:52:31.000Z">
+<meta property="article:modified_time" content="2020-09-22T02:39:02.990Z">
 <meta property="article:author" content="Reynold Cheng">
 <meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="Vue.js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1NAZ7I26YFtBtQBRuZdjgS7ZHODB_WBJU">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=1OMMgz7zwxu8fsXOJC6zc8b8SXZ_wK8qK">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/20/2020-09-20/">
+<link rel="canonical" href="http://yoursite.com/2020/09/22/2020-09-22/">
 
 
 <script id="page-configurations">
@@ -49,7 +46,7 @@
   };
 </script>
 
-  <title>What is Virtual DOM? | Fly with code</title>
+  <title>Truthy & Falsy vs Logical operators | Fly with code</title>
   
 
 
@@ -165,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/2020-09-20/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/22/2020-09-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://drive.google.com/uc?export=view&id=1Dwk3y74HtvknMq93y3ExRPwrpcdTf9R8">
@@ -178,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          What is Virtual DOM?
+          Truthy & Falsy vs Logical operators
         </h1>
 
         <div class="post-meta">
@@ -189,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-09-20 20:37:37 / Modified: 21:10:58" itemprop="dateCreated datePublished" datetime="2020-09-20T20:37:37+08:00">2020-09-20</time>
+              <time title="Created: 2020-09-22 09:52:31 / Modified: 10:39:02" itemprop="dateCreated datePublished" datetime="2020-09-22T09:52:31+08:00">2020-09-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -212,18 +209,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://drive.google.com/uc?export=view&id=1NAZ7I26YFtBtQBRuZdjgS7ZHODB_WBJU"><br>Photo credit to <a target="_blank" rel="noopener" href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/build-a-simple-virtual-dom-5cf12ccf379f">手寫筆記</a></p>
+        <p><img src="https://drive.google.com/uc?export=view&id=1OMMgz7zwxu8fsXOJC6zc8b8SXZ_wK8qK"></p>
 <a id="more"></a>
 
-<h1 id="Why-we-need-to-use-Virtual-DOM"><a href="#Why-we-need-to-use-Virtual-DOM" class="headerlink" title="Why we need to use Virtual DOM ?"></a>Why we need to use Virtual DOM ?</h1><p>The actual cost to manipulate DOM is highly expensive.<br>Therefore,for famous front-end frameworks like Vue.js and React.js<br>Both of them use concept of Virtual DOM.</p>
-<h1 id="What’s-the-history-of-Virtual-DOM"><a href="#What’s-the-history-of-Virtual-DOM" class="headerlink" title="What’s the history of Virtual DOM ?"></a>What’s the history of Virtual DOM ?</h1><p>It can be traced back to development history of MVC and MVVM patterns.<br>Both patterns are all created to solve webpage display,data change,and user manipulation.<br>And amid above 3 status, the interaction is extremely complicated.<br>To make interaction more easily, inventor of frameworks apply Virtual DOM.</p>
-<h1 id="How-does-Virtual-DOM-actually-work"><a href="#How-does-Virtual-DOM-actually-work" class="headerlink" title="How does Virtual DOM actually work ?"></a>How does Virtual DOM actually work ?</h1><ul>
-<li>Virtual DOM use object to describe DOM tree structure.</li>
-<li>While DOM element needs to be altered,no need to manipulate DOM node directly.</li>
-<li>Instead, use an algorithm called diff to compare the differences between new and old tree structure.</li>
-<li>Then update the nodes on the real DOM tree.</li>
+<h1 id="Truthy"><a href="#Truthy" class="headerlink" title="Truthy"></a>Truthy</h1><ul>
+<li>A value that is considered true when encountered in a Boolean context.</li>
+<li>All values are truthy unless they are defined as falsy.</li>
 </ul>
-<h1 id="Additional-Knowledge"><a href="#Additional-Knowledge" class="headerlink" title="Additional Knowledge"></a>Additional Knowledge</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=85gJMUEcnkc">Building a Simple Virtual DOM from Scratch — Jason Yu</a><br><a target="_blank" rel="noopener" href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/build-a-simple-virtual-dom-5cf12ccf379f">Virtual DOM | 為了瞭解原理，那就來實作一個簡易 Virtual DOM 吧！</a><br><a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2019/02/04/vdom-from-scratch/">從頭打造一個簡單的 Virtual DOM</a></p>
+<h1 id="Falsy"><a href="#Falsy" class="headerlink" title="Falsy"></a>Falsy</h1><ul>
+<li><code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code>, <code>&quot;&quot;</code>, <code>null</code>, <code>undefined</code>, and <code>NaN</code>.</li>
+</ul>
+<h1 id="Logical-operators"><a href="#Logical-operators" class="headerlink" title="Logical operators"></a>Logical operators</h1><ul>
+<li><p>AND (&amp;&amp;)<br>For expr1 &amp;&amp; expr2, returns expr1 if it can be converted to false; otherwise, returns expr2</p>
+</li>
+<li><p>OR (||)<br>For expr1 &amp;&amp; expr2, returns expr1 if it can be converted to true; otherwise, returns expr2.</p>
+</li>
+<li><p>NOT (!)<br>For !expr, returns false if its single operand that can be converted to true; otherwise, returns true.</p>
+</li>
+</ul>
+<h1 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">1</span>); <span class="comment">// 0</span></span><br><span class="line">expr1 is <span class="number">0</span>,which is falsy, then <span class="keyword">return</span> expr1</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> &amp;&amp; <span class="number">0</span>); <span class="comment">// 0</span></span><br><span class="line">expr1 is <span class="number">1</span>, which is truthy, then <span class="keyword">return</span> expr2</span><br></pre></td></tr></table></figure>
+<h1 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> || <span class="number">1</span>); <span class="comment">// 1</span></span><br><span class="line">expr1 is <span class="number">0</span>, which is falsy, then <span class="keyword">return</span> expr2</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> || <span class="number">0</span>); <span class="comment">// 1</span></span><br><span class="line">expr1 is truthy, which is truthy, then <span class="keyword">return</span> expr1</span><br></pre></td></tr></table></figure>
+<h1 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> c=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a &amp;&amp; b &amp;&amp; c); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line">Associativity <span class="keyword">of</span> &amp;&amp; is left-to-right</span><br><span class="line">count a &amp;&amp; b first, <span class="keyword">return</span> b, then count b &amp;&amp; c, <span class="keyword">return</span> c, which is <span class="number">0.</span></span><br></pre></td></tr></table></figure>
+<h1 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> c=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c || c &amp;&amp; c || a); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">Precedence <span class="keyword">of</span> &amp;&amp; is <span class="number">6</span>, and Precedence <span class="keyword">of</span> || is <span class="number">5.</span></span><br><span class="line">Therefore, it will count c &amp;&amp; c first, then <span class="keyword">return</span> c.</span><br><span class="line">then, it will become <span class="built_in">console</span>.log(c || c || a).</span><br><span class="line">Associativity <span class="keyword">of</span> || is left-to-right</span><br><span class="line">Count c || c first, <span class="keyword">return</span> c, then count c || a, <span class="keyword">return</span> a, which is <span class="number">1.</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Additional-Knowledge"><a href="#Additional-Knowledge" class="headerlink" title="Additional Knowledge"></a>Additional Knowledge</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Logical">Logical operators</a><br><a target="_blank" rel="noopener" href="https://dorey.github.io/JavaScript-Equality-Table/">JavaScript-Equality-Table</a></p>
 
     </div>
 
@@ -234,7 +243,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-              <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
           </div>
 
         
@@ -243,13 +251,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/19/2020-09-19/" rel="prev" title="Difference between Lexical and Dynamic Scoping">
-      <i class="fa fa-chevron-left"></i> Difference between Lexical and Dynamic Scoping
+    <a href="/2020/09/21/2020-09-21/" rel="prev" title="Difference between compiled and interpreted language">
+      <i class="fa fa-chevron-left"></i> Difference between compiled and interpreted language
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/21/2020-09-21/" rel="next" title="Difference between compiled and interpreted language">
-      Difference between compiled and interpreted language <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -308,7 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-we-need-to-use-Virtual-DOM"><span class="nav-number">1.</span> <span class="nav-text">Why we need to use Virtual DOM ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What%E2%80%99s-the-history-of-Virtual-DOM"><span class="nav-number">2.</span> <span class="nav-text">What’s the history of Virtual DOM ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-Virtual-DOM-actually-work"><span class="nav-number">3.</span> <span class="nav-text">How does Virtual DOM actually work ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Additional-Knowledge"><span class="nav-number">4.</span> <span class="nav-text">Additional Knowledge</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Truthy"><span class="nav-number">1.</span> <span class="nav-text">Truthy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Falsy"><span class="nav-number">2.</span> <span class="nav-text">Falsy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logical-operators"><span class="nav-number">3.</span> <span class="nav-text">Logical operators</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-1"><span class="nav-number">4.</span> <span class="nav-text">Example 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-2"><span class="nav-number">5.</span> <span class="nav-text">Example 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-3"><span class="nav-number">6.</span> <span class="nav-text">Example 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-4"><span class="nav-number">7.</span> <span class="nav-text">Example 4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Additional-Knowledge"><span class="nav-number">8.</span> <span class="nav-text">Additional Knowledge</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
